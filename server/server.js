@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = process.env.PORT || 5008;
 
@@ -7,6 +7,12 @@ app.get("/", (req, res) => {
   res.send("welcome server!");
 });
 
+app.get("profile", jwtmw, (req, res) => {
+  // let user = req.user;
+  
+  let userData = await  User.find({id:user.id}); 
+
+});
 
 //server open on port
 app.listen(port, () => {
